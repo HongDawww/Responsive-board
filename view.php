@@ -3,6 +3,21 @@ require_once("./dbconnect.php");
 
 $no = $_GET['no'];
 
+if(!empty($no) && empty($_COOKIE["bHit".$no])) {
+	$sql = " UPDATE bbs SET b_hit=b_hit+1 WHERE b_no =".$no;
+	$result = $db->query($sql);
+	if(empty($result)){
+?>
+	<script>
+		alert("문제 발생");
+		history.back();
+	</script>
+<?php
+	} else {
+		setcookie("bHit".$no,TRUE,time()+(60*60*24));
+	}
+}
+
 $sql = "SELECT b_subject, b_content, b_date, b_hit, b_id FROM bbs WHERE b_no =". $no;
 $result = $db->query($sql);
 $row = $result->fetch_array();
