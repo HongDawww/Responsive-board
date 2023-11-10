@@ -1,0 +1,63 @@
+.boardArticle table {
+	width: 720px;
+	border-collapse: collapse;
+	border-top: 2px solid #777;
+}
+
+/*  list  */
+#list th {
+	padding: 5px 0;
+	border: 1px solid #777;
+	border-top: 2px solid #777;
+
+}
+#list td {padding: 8px 0; border: 1px solid #777;}
+#list .no {width: 60px; text-align: center;}
+#list .author {width: 100px; text-align: center;}
+#list .date {width: 100px;text-align: center;}
+#list .hit {width: 40px; text-align: center;}
+#list .btnSet {width: 720px; text-align: right;}
+
+/* 글쓰기 */
+#write table {width: 720px;}
+#write th {width: 100px; padding: 5px; text-align: right; vertical-align: top;}
+#write td {width: 620px; padding: 5px;}
+#write #ID {width: 180px;}
+#write #password {width: 180px;}
+#write #subject {width: 400px;}
+#write #content {width: 500px; height: 200px;}
+#write .btnSet{width: 720px; text-align: center;}
+
+/* 글보기 */
+
+#boardView #bSubject {
+	width: 720px;
+	background: mediumaquamarine;
+	font-size: 26px;
+	font-weight: bold;
+	line-height: 30px;
+	text-align: center;
+	padding: 3px 10px;
+}
+#boardView #bInfo {
+	position: relative;
+	width: 720px;
+	border: 1px solid #666;
+	padding: 0 10px;
+	margin: 10px 0px;
+}
+#bInfo #ID, #bDate {
+	margin-right: 20px;
+}
+#boardView #bContent {margin: 10px 0;}
+#bInfo #bHit {
+	position: absolute;
+	right: 0;
+	padding-right: 10px;
+}
+.btnSet {width: 720px; text-align: center;}
+
+/* 삭제 */
+#boardDelete table {width: 720px; border: 1px solid #666; margin-bottom: 10px;}
+#boardDelete tbody th {width: 100px; padding: 5px; text-align: right; vertical-align: top;}
+.btnSet {width: 720px; text-align: center;}
