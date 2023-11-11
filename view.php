@@ -28,6 +28,7 @@ $row = $result->fetch_array();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="./css/style.css">
 	<title>게시판</title>
 </head>
@@ -38,16 +39,16 @@ $row = $result->fetch_array();
 			<div id="bSubject">
 				<h3><?php echo $row["b_subject"]; ?></h3>
 			</div>
-			<div id="bInfo">
-				<span id="ID">작성자 : <?php echo $row["b_id"]; ?></span>
-				<span id="bDate">작성일 : <?php echo $row["b_date"]; ?></span>
-				<span id="bHit">조회수 : <?php echo $row["b_hit"]; ?></span>
+			<div id="bInfo" class="table">
+				<span  id="ID">작성자 : <?php echo $row["b_id"]; ?></span>
+				<span  id="bDate">작성일 : <?php echo $row["b_date"]; ?></span>
+				<span  id="bHit">조회수 : <?php echo $row["b_hit"]; ?></span>
 				<div id="bContent"><?php echo $row["b_content"]; ?></div>
 			</div>
 			<div class="btnSet">
-				<a href="./write.php?no=<?php echo $no ?>">수정</a>
-				<a href="./delete.php?no=<?php echo $no ?>">삭제</a>
-				<a href="./">목록으로</a>
+				<a class="btn btn-outline-dark" href="./write.php?no=<?php echo $no ?>">수정</a>
+				<a class="btn btn-outline-dark" href="./delete.php?no=<?php echo $no ?>">삭제</a>
+				<a class="btn btn-outline-dark" href="./">목록으로</a>
 			</div>
 			<div id="comment">
 				<?php 

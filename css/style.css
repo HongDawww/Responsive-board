@@ -1,3 +1,36 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul, li {
+	list-style: none;
+}
+a {
+    text-decoration: none;
+}
 .boardArticle table{ 
     width:70%;
     border-collapse: collapse;     
@@ -12,17 +45,16 @@
     padding: 8px 0; border:1px solid #777;
 }
 #list .no{width:60px; text-align: center}
-#list .subject{}
 #list .author{ width:100px; text-align: center}
 #list .date{ width:100px; text-align:center}
 #list .hit{ width: 40px; text-align:center}
 #list .btnSet{width:70%; text-align:right}
-
+/* 
 #list .paging { text-align: center; width:70%;}
-#list .paging li{display:inline-block; height:20px; margin:0 5px; border:1px solid #777; background:#eee; line-height:21px; }
+#list .paging li{display:inline-block; height:20px; margin:0 5px; border:1px solid #777; background:#eee; line-height:21px; } */
 
-#list .paging li.currentPage, li:hover{background: #777;}
-#list .paging li.currentPage, li:hover a{color: #ccc;}
+/* #list .paging li.currentPage, li:hover{background: #777;}
+#list .paging li.currentPage, li:hover a{color: #ccc;} */
 
 #list .search{text-align: center; width:70%;}
 
@@ -154,3 +186,40 @@
 #commentView .commentID{ float:left}
 #commentView .commentBtn{float:right}
 #commentView .commentContent{clear:both;}
+
+
+.pagination {
+    text-align: center;
+    position: relative;
+    bottom: 113px;
+    left: 25%;
+}
+
+.fs-1 {
+    text-align: center;
+    width: 70%;
+}
+
+.form-select {
+    text-align: center;
+    position: relative;
+    bottom: 102px;
+    left: 5%;
+    width: 10%;
+}
+
+.input-group{
+    text-align: center;
+    position: relative;
+    bottom: 140px;
+    left: 17%;
+    width: 50%;
+}
+
+.table {
+    margin: 0 auto;
+    position: relative;
+}
+.submitBtn {
+    margin: 0 auto;
+}

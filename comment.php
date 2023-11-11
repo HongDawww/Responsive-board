@@ -2,6 +2,19 @@
     $sql = 'select  * from comment where comment_no=comment_depth and b_no='.$no;
     $result = $db->query($sql);
 ?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
 <div id="commentView">
     <form action="postComment.php" method="post">
         <input type="hidden" name="bNo" value="<?=$no?>">
@@ -55,22 +68,22 @@
       <table> 
         <tbody>
             <tr>
-                <th><label for="commentID">아이디</label></th>
-                <td><input type="text" name="commentID" id="commentID"></td>
+                <th><label for="commentID" class="form-label">아이디</label></th>
+                <td><input class="form-control" type="text" name="commentID" id="commentID"></td>
             </tr>
             <tr>
-                <th><label for="cPw">비밀번호</label></th>   
-                    <td><input type="password" name="cPw" id="cPw"></td>
+                <th><label for="cPw" class="form-label" >비밀번호</label></th>   
+                    <td><input class="form-control" type="password" name="cPw" id="cPw"></td>
                 
             </tr>
             <tr>
-                <th><label for="cContent">내용</label></th>
-                <td><textarea name="cContent" id="cContent"></textarea></td>
+                <th><label for="cContent" class="form-label">내용</label></th>
+                <td><textarea class="form-control" name="cContent" id="cContent"></textarea></td>
             </tr>
         </tbody>
     </table>
     <div class="btnSet">
-        <input type="submit" value="댓글 작성"/>
+        <input class="btn btn-outline-dark" type="submit" value="댓글 작성"/>
     </div>
 </form>
 

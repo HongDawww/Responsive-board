@@ -66,34 +66,34 @@
     $prevPage = (($currentBlock-1)*$block); // 이전페이지, 블럭이 2블럭일 경우(4 5 6) 이전을 누르면 3페이지로 이동; 
     $nextPage = (($currentBlock+1)*$block)-($block - 1);//다음 페이지로 이동
     
-    $paging = '<ul>';
+    $paging = '<ul class="pagination m-5">';
     
     //첫페이지가 아닌 경우에는 처음 버튼을 생성한다.
     if($page !=1 ){
-        $paging .='<li class="startPage"><a href="./index.php?page=1'.$searchString.'">처음 </a></li>';
+        $paging .='<li class="startPage page-item"><a class="page-link" href="./index.php?page=1'.$searchString.'">처음 </a></li>';
     }
     
     //첫 블럭이 아닌 경우에는 이전 버튼을 생성
     if($currentBlock !=1){
-        $paging .='<li class="prevPage"><a href="./index.php?page='.$prevPage. $searchString.'">◀</a></li>';
+        $paging .='<li class="prevPage page-item"><a class="page-link" href="./index.php?page='.$prevPage. $searchString.'">◀</a></li>';
     }
     
     for($i = $firstPage; $i <=$lastPage; $i++){
         if($i==$page){
-            $paging.='<li class="currentPage">'.$i.'</li>';
+            $paging.='<li class="page-item currentPage "><a class="page-link">'.$i.'</a></li>';
         }else{
-            $paging .='<li class="page"><a href="./index.php?page='.$i.$searchString.'">'.$i.'</a></li>';
+            $paging .='<li class="page page-item"><a class="page-link" href="./index.php?page='.$i.$searchString.'">'.$i.'</a></li>';
         }
     }
     
     //마지막 블럭이 아닌 경우에는 다음 버튼을 생성한다.
     if($currentBlock !=$allBlock){
-        $paging.='<li class="nextPage"><a href="./index.php?page='.$nextPage.$searchString.'">▶</a></li>';
+        $paging.='<li class="nextPage page-item"><a class="page-link" href="./index.php?page='.$nextPage.$searchString.'">▶</a></li>';
     }
     
     //마지막 페이지가 아니라면 끝 버튼을 생성한다.
     if($page !=$allPage){
-        $paging .='<li class="endPage"><a href="./index.php?page='.$allPage.$searchString.'"> 끝</a></li>';
+        $paging .='<li class="endPage page-item"><a class="page-link" href="./index.php?page='.$allPage.$searchString.'"> 끝</a></li>';
     }
     $paging .='</ul>';
     
@@ -115,20 +115,21 @@ and open the template in the editor.
         <title>게시판</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="./css/style.css"/>
     </head>
     <body>
         <article class="boardArticle">
-          <div id="list">
-            <h3>반응형 게시판 </h3>
-            <table>                
+          <div id="list" >
+            <h3 class="fs-1 m-5">반응형 게시판 </h3>
+            <table class="table m-5">                
                 <thead>
                     <tr>
-                        <th scope="col" class="no"> 번호</th>
-                        <th scope="col" class="subject">제목</th>
-                        <th scope="col" class="author">작성자</th>
-                        <th scope="col" class="date">작성일</th>
-                        <th scope="col" class="hit">조회</th>
+                        <th class="no"> 번호</th>
+                        <th class="subject">제목</th>
+                        <th class="author">작성자</th>
+                        <th class="date">작성일</th>
+                        <th class="hit">조회</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -168,7 +169,7 @@ and open the template in the editor.
                  if(isset($emptyData)) {?>
                     <a href="./index.php">목록보기</a>
                  <?php } ?>
-                <a href="./write.php" class="btnWrite">글쓰기</a>
+                <a href="./write.php" class="btnWrite btn btn-outline-dark">글쓰기</a>
                 
             </div>
             
@@ -178,13 +179,16 @@ and open the template in the editor.
             
             <div class="search">
                 <form action="./index.php" method="get">
-                    <select name="searchColumn">
+                    <select name="searchColumn" class="form-select" aria-label="Default select example">
+                        <option selected>선택</option>
                         <option <?= $searchColumn == 'b_subject'?'selected="selected"':null?> value="b_subject">제목</option>
                         <option <?= $searchColumn == 'b_content'?'selected="selected"':null?> value="b_content">내용</option>
                         <option <?= $searchColumn == 'b_id'?'selected="selected"':null?> value="b_id">아이디</option>
                     </select>
-                    <input type="text" name="searchWord" value="<?= isset($searchWord)?$searchWord:null?>"/>
-                    <button type="submit">검색</button>
+                    <div class="input-group mb-3">
+                        <input class="form-control" aria-label="Text input with dropdown button" type="text" name="searchWord" value="<?= isset($searchWord)?$searchWord:null?>"/>
+                        <button type="submit" class="btn btn-outline-dark">검색</button>
+                    </div>
                 </form>
             </div>
           </div>  
