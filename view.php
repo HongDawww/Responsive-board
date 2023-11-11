@@ -49,6 +49,11 @@ $row = $result->fetch_array();
 				<a href="./delete.php?no=<?php echo $no ?>">삭제</a>
 				<a href="./">목록으로</a>
 			</div>
+			<div id="comment">
+				<?php 
+					require_once("./comment.php");
+				?>	
+			</div>
 		</div>
 	</article>
 </body>

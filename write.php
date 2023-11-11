@@ -1,6 +1,6 @@
 <?php
     require_once("./dbconnect.php");    
-
+    //$_GET['no']이 있을때만 $no변수를 사용할 수 있도록 한다.
     if(isset($_GET['no'])){
         $no=$_GET['no'];
     }
@@ -29,6 +29,9 @@
             <div id="write">
                 <form action="./postWrite.php" method="post">
                     <?php
+                    // hidden으로 no를 처리한 이유는
+                    // form에서 submit을 했을 때 게시글 번호도 함께 전송하기 위해서..
+                    // DB수정하고자 하는 글번호를 알 수 있도록 하기 위함.
                     if(isset($no)){
                         echo '<input type="hidden" name="no" value="'.$no.'">';
                     }
@@ -50,7 +53,7 @@
                             </tr>
                             <tr>
                                 <th scope="row"><label for="password">비밀번호</label></th>
-                                <td class="pw"><input type="password" name="pw" id="pw"></td>
+                                <td class="pw"><input type="text" name="password" id="password"></td>
                             </tr>
                             <tr>
                                 <th scope="row"><label for="subject">제목</label></th>

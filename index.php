@@ -1,5 +1,5 @@
 <?php
-    require_once("dbConnect.php");
+    require_once("dbconnect.php");
     
     if(isset($_GET['page'])){
         $page=$_GET['page'];
