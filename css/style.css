@@ -47,7 +47,7 @@ a{
 }
 
 .boardArticle table {
-	width: 720px;
+	width: 70%;
 	border-collapse: collapse;
 	border-top: 2px solid #777;
 }
@@ -64,10 +64,10 @@ a{
 #list .author {width: 100px; text-align: center;}
 #list .date {width: 100px;text-align: center;}
 #list .hit {width: 40px; text-align: center;}
-#list .btnSet {width: 720px; text-align: right;}
+#list .btnSet {width: 70%; text-align: right;}
 
 /* 페이징 */
-#list .paging {text-align: center; width: 720px;}
+#list .paging {text-align: center; width: 70%;}
 #list .paging li {
 	display: inline-block;
 	height: 20px;
@@ -83,21 +83,23 @@ a{
 	color: #ccc;
 }
 
+/* 검색 */
+#list .search{text-align: center; width: 70%;}
 
 /* 글쓰기 */
 #write table {width: 720px;}
-#write th {width: 100px; padding: 5px; text-align: right; vertical-align: top;}
-#write td {width: 620px; padding: 5px;}
-#write #ID {width: 180px;}
-#write #password {width: 180px;}
-#write #subject {width: 400px;}
-#write #content {width: 500px; height: 200px;}
-#write .btnSet{width: 720px; text-align: center;}
+#write th {width: 15%; padding: 5px; text-align: right; vertical-align: top;}
+#write td {width: 85%; padding: 5px;}
+#write #ID {width: 20%;}
+#write #password {width: 20%;}
+#write #subject {width: 50%;}
+#write #content {width: 50%; height: 200px;}
+#write .btnSet{width: 70%; text-align: center;}
 
 /* 글보기 */
 
 #boardView #bSubject {
-	width: 720px;
+	width: 70%;
 	background: mediumaquamarine;
 	font-size: 26px;
 	font-weight: bold;
@@ -107,7 +109,7 @@ a{
 }
 #boardView #bInfo {
 	position: relative;
-	width: 720px;
+	width: 70%;
 	border: 1px solid #666;
 	padding: 0 10px;
 	margin: 10px 0px;
@@ -121,9 +123,9 @@ a{
 	right: 0;
 	padding-right: 10px;
 }
-.btnSet {width: 720px; text-align: center;}
+.btnSet {width: 70%; text-align: center;}
 
 /* 삭제 */
-#boardDelete table {width: 720px; border: 1px solid #666; margin-bottom: 10px;}
+#boardDelete table {width: 70%; border: 1px solid #666; margin-bottom: 10px;}
 #boardDelete tbody th {width: 100px; padding: 5px; text-align: right; vertical-align: top;}
-.btnSet {width: 720px; text-align: center;}
+.btnSet {width: 70%; text-align: center;}

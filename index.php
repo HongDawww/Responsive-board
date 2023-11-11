@@ -7,6 +7,10 @@ require_once('dbconnect.php');
 		$page = 1;
 	}
 
+	if(isset($_GET["searchColumn"])){
+		$searchCol = $_GET["searchColumn"];
+	}
+
 	$sql = " SELECT count(*) as cnt FROM bbs ";
 	$result = $db->query($sql);
 	$row = $result->fetch_array();
@@ -138,6 +142,17 @@ require_once('dbconnect.php');
 			</div>
 			<div class="paging">
 				<?php echo $paging ?>
+			</div>
+			<div class="search">
+				<form action="./index.php" method="get">
+					<select name="searchColumn" id="">
+						<option value="">제목</option>
+						<option value="">내용</option>
+						<option value="">아이디</option>
+					</select>
+					<input type="text" name="searchWord" value="">
+					<button type="submit">검색</button>
+				</form>
 			</div>
 		</div>
 	</article>
